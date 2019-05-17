@@ -1,0 +1,14 @@
+{% extends "planner/base.html" %}
+
+{% block content %}
+
+    <h1>난 홈</h1>
+
+    {% for planner in planners.all %}
+        <div>
+            <h2><a href = "{% url 'detail' planner.id %}">{{planner.title}}</a></h2>
+            <p>{{planner.created_date}}</p>
+            <p>{{planner.text}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

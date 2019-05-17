@@ -1,0 +1,17 @@
+{% extends "planner/base.html" %}
+
+{% block content %}
+
+<body>
+    <h1>나는 디테일</h1>
+    <div>
+        <h2>{{planner.title}}</h2>
+        <p>{{planner.created_date}}</p>
+        <p>{{planner.text}}</p>
+ 
+        <a href = "{% url 'edit' planner.id %}">수정</a>
+        <a href = "{% url 'delete' planner.id %}">삭제</a>
+    </div>
+</body>
+
+{% endblock %}

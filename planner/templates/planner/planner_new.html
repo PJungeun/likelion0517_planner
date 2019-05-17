@@ -1,0 +1,11 @@
+{% extends "planner/base.html" %}
+
+{% block content %}
+
+    <h1>글쓰기페이지</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">저장</button>
+    </form>
+{% endblock %}
