@@ -5,8 +5,8 @@ from .forms import PlannerForm
 # Create your views here.
 
 def home(request):
-    planners=Planner.objects
-    return render(request,'planner/home.html',{'planners':planners})
+    planner_list=Planner.objects.all().order_by('created_date')
+    return render(request,'planner/home.html',{'planners':planner_list})
 
 def detail(request, planner_id):
     planner_detail=get_object_or_404(Planner,pk=planner_id)
